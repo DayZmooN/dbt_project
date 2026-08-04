@@ -5,6 +5,8 @@ version: 2
 sources:
   - name: Northwind
     description: "Source contenant les tables Northwind"
+    schema: public
+
 
     tables:
     - name: customers
@@ -15,6 +17,9 @@ sources:
 
     - name: orders
       description: "Commandes passées par les clients"
+
+    - name: products
+      description: "Catalogue des produits"
 
     - name: order_details
       description: "Détails des lignes de commande"
@@ -27,3 +32,21 @@ sources:
 
     - name: shippers
       description: "Transporteurs des commandes"
+
+    - name: us_states
+      description: "Table contenant la liste des états des États-Unis."
+
+    - name: customer_customer_demo
+      description: "Table de liaison entre les clients et leurs informations de démonstration."
+
+    - name: territories
+      description: "Table contenant les territoires commerciaux associés aux régions."
+
+    - name: employee_territories
+      description: "Table de liaison entre les employés et les territoires qui leur sont attribués."
+
+    - name: region
+      description: "Table contenant les régions commerciales."
+
+    - name: customer_demographics
+      description: "Table contenant les informations démographiques des clients."  
