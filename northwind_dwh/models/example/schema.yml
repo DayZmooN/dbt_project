@@ -1,6 +1,34 @@
 
 version: 2
 
+
+sources:
+  - name: Northwind
+    description: "Source contenant les tables Northwind"
+
+    tables:
+    - name: customers
+      description: "Informations sur les clients"
+
+    - name: employees
+      description: "Informations sur les employés"
+
+    - name: orders
+      description: "commandes des clients"
+
+    - name: order_details
+      description: "Détails des lignes de commande"
+
+    - name: categories
+      description: "Catalogue des produits"
+
+    - name: suppliers
+      description: "Fournisseurs des produits"
+
+    - name: shippers
+      description: "Transporteurs des commandes"
+
+
 models:
   - name: my_first_dbt_model
     description: "A starter dbt model"
