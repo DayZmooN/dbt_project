@@ -14,7 +14,7 @@ sources:
       description: "Informations sur les employés"
 
     - name: orders
-      description: "commandes des clients"
+      description: "Commandes passées par les clients"
 
     - name: order_details
       description: "Détails des lignes de commande"
