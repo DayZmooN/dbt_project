@@ -8,11 +8,14 @@ GRANT CONNECT ON DATABASE "Northwind" TO northwind_readonly, northwind_dbt;
 -- lire le schema public
 GRANT USAGE ON SCHEMA public TO northwind_readonly, northwind_dbt;
 
+
 -- cree un schema pour dbt_dev
 CREATE SCHEMA dbt_dev AUTHORIZATION northwind_dbt;
 
 -- permetre de cree des schémas (dbt_dev)
 GRANT USAGE, CREATE ON SCHEMA dbt_dev  TO northwind_dbt;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO northwind_dbt;
+
 --permission SELECT,INSERT,UPDATE,DELETE 
 GRANT SELECT, INSERT,UPDATE,DELETE 
 ON ALL TABLES IN SCHEMA dbt_dev 
@@ -28,7 +31,7 @@ GRANT northwind_dbt TO dbt_user;
 
 -- toutes les tables futures auront les meme regles
 ALTER DEFAULT PRIVILEGES
-FOR ROLE dbt_user
+FOR ROLE postgres
 IN SCHEMA public
 GRANT SELECT ON TABLES TO northwind_readonly;
 
