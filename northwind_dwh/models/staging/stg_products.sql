@@ -8,7 +8,7 @@ SELECT
     CAST(units_in_stock AS INTEGER) AS units_in_stock,
     CAST(units_on_order AS INTEGER) AS units_on_order,
     CAST(reorder_level AS INTEGER) AS  reorder_level,
-    CAST(discontinued AS INTEGER) AS discountinued,
+    CAST(discontinued AS INTEGER) AS discontinued,
 
     CASE
         WHEN CAST(units_in_stock AS INTEGER) > 0 THEN TRUE
