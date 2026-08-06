@@ -1,62 +1,78 @@
 version: 2
+
 models:
   - name: stg_customers
+    description: "Table staging contenant les clients nettoyés depuis la source Northwind."
     columns:
       - name: customer_id
+        description: "Identifiant unique du client."
         tests:
           - unique
           - not_null
-  
+
   - name: stg_categories
+    description: "Table staging contenant les catégories de produits."
     columns:
       - name: category_id
-        test:
+        description: "Identifiant unique de la catégorie."
+        tests:
           - unique
           - not_null
 
   - name: stg_orders
+    description: "Table staging contenant les commandes nettoyées."
     columns:
       - name: order_id
-        test: 
-          - unique
-          - not_null
-  
-  - name: stg_products
-    columns:
-      - name: product_id
+        description: "Identifiant unique de la commande."
         tests:
           - unique
           - not_null
-  
+
+  - name: stg_products
+    description: "Table staging contenant les produits nettoyés."
+    columns:
+      - name: product_id
+        description: "Identifiant unique du produit."
+        tests:
+          - unique
+          - not_null
 
   - name: stg_employees
+    description: "Table staging contenant les employés."
     columns:
       - name: employee_id
+        description: "Identifiant unique de l'employé."
         tests:
           - unique
           - not_null
-  
+
   - name: stg_order_details
+    description: "Table staging contenant le détail des lignes de commande."
     columns:
       - name: order_id
+        description: "Identifiant de la commande associée."
         tests:
           - not_null
 
       - name: product_id
+        description: "Identifiant du produit commandé."
         tests:
           - not_null
-  
+
   - name: stg_suppliers
+    description: "Table staging contenant les fournisseurs."
     columns:
       - name: supplier_id
+        description: "Identifiant unique du fournisseur."
         tests:
           - unique
           - not_null
 
   - name: stg_shippers
+    description: "Table staging contenant les transporteurs."
     columns:
       - name: shipper_id
+        description: "Identifiant unique du transporteur."
         tests:
           - not_null
           - unique
-  

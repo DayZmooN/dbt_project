@@ -2,20 +2,27 @@ version: 2
 
 models:
   - name: fact_orders
+    description: "Table de faits contenant les informations analytiques sur les commandes."
     columns:
+      - name: order_id
+        description: "Identifiant unique de la commande."
+
       - name: customer_id
+        description: "Identifiant du client associé à la commande."
         tests:
           - relationships:
               to: ref('dim_customers')
               field: customer_id
 
       - name: employee_id
+        description: "Identifiant de l'employé ayant traité la commande."
         tests:
           - relationships:
               to: ref('dim_employees')
               field: employee_id
       
       - name: ship_via
+        description: "Identifiant du transporteur utilisé pour expédier la commande."
         tests:
           - relationships:
               to: ref('dim_shippers')
