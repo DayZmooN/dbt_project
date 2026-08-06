@@ -1,5 +1,5 @@
 SELECT 
-    customer_id,
+    c.customer_id,
     COUNT(o.order_id) AS nb_commandes,
     SUM(od.unit_price * od.quantity) AS ca_total,
     FIRST_VALUE(o.order_date) OVER() AS date_premiere_commande,
@@ -8,4 +8,4 @@ SELECT
 FROM {{ref('stg_customers')}} AS c
 INNER JOIN {{ref('stg_orders')}} AS o ON c.customer_id = o.customer_id
 INNER JOIN {{ref('stg_order_details')}} AS od ON o.order_id = od.order_id
-GROUP BY customer_id
+GROUP BY c.customer_id,o.order_date
