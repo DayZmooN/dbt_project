@@ -8,8 +8,8 @@ SELECT
     p.en_stock,
     c.category_name,
     c.description AS category_description,
-    s.company_name,
-    s.country
+    s.company_name AS supplier_name,
+    s.country AS supplier_country
 FROM {{ref('stg_products')}} AS p
 INNER JOIN {{ref('stg_categories')}} AS c ON p.product_id = c.category_id
 INNER JOIN {{ref('stg_suppliers')}} AS s ON p.supplier_id = s.supplier_id
